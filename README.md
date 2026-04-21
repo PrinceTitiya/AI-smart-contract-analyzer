@@ -4,7 +4,7 @@ An **AI-powered smart contract auditing system** that combines **static analysis
 
 ---
 
-# 🚀 Overview
+# Overview
 
 This project is designed to simulate how a **real-world smart contract auditor** works:
 
@@ -14,7 +14,7 @@ This project is designed to simulate how a **real-world smart contract auditor**
 
 ---
 
-# 🧠 System Architecture
+# System Architecture
 
 ```
             ┌──────────────┐
@@ -50,20 +50,20 @@ This project is designed to simulate how a **real-world smart contract auditor**
 
 # Tech Stack
 
-### 🔹 Static Analysis
+### Static Analysis
 
 - **Slither** → vulnerability detection
 
-### 🔹 AI / RAG
+### AI / RAG
 
 - **SentenceTransformers (MiniLM)** → embeddings
 - **ChromaDB** → vector database
 
-### 🔹 LLM
+### LLM
 
 - **Ollama + Llama3 / Mistral** → explanation engine
 
-### 🔹 Language
+### Language
 
 - Python
 
@@ -94,11 +94,11 @@ ai-smart-contract-analyzer/
 
 ---
 
-# 🔄 System Flow (Step-by-Step)
+# System Flow (Step-by-Step)
 
 ---
 
-## 🟢 1. Input Layer
+## 1. Input Layer
 
 User provides:
 
@@ -112,11 +112,11 @@ Handled by:
 loader.py
 ```
 
-👉 Output: Raw Solidity code (string)
+Output: Raw Solidity code (string)
 
 ---
 
-## 🟢 2. Static Analysis (Slither)
+## 2. Static Analysis (Slither)
 
 ```python
 slither_runner.py
@@ -140,7 +140,7 @@ slither contract.sol --json result.json
 
 ---
 
-## 🟢 3. Parsing Layer
+## 3. Parsing Layer
 
 ```python
 parser.py
@@ -159,7 +159,7 @@ Extracts structured vulnerabilities:
 
 ---
 
-## 🟢 4. Scoring Engine
+## 4. Scoring Engine
 
 ```python
 analyze.py
@@ -174,7 +174,7 @@ Uses weighted scoring:
 | Low           | -10     |
 | Informational | -5      |
 
-👉 Example:
+Example:
 
 ```
 Score = 100 - penalties
@@ -182,7 +182,7 @@ Score = 100 - penalties
 
 ---
 
-## 🟡 5. Embedding Layer (AI)
+## 5. Embedding Layer (AI)
 
 ```python
 embedder.py
@@ -194,11 +194,11 @@ Converts contract into vector:
 Solidity Code → 384-dim vector
 ```
 
-👉 Represents **semantic meaning of code**
+Represents **semantic meaning of code**
 
 ---
 
-## 🟡 6. Vector Database (Memory)
+## 6. Vector Database (Memory)
 
 ```python
 vector_store.py
@@ -212,7 +212,7 @@ Stores:
 
 ---
 
-## 🟡 7. Dataset (Knowledge Base)
+## 7. Dataset (Knowledge Base)
 
 ### Why needed?
 
@@ -229,7 +229,7 @@ AI needs **examples to compare against**
 }
 ```
 
-👉 Adds **meaning to raw code**
+Adds **meaning to raw code**
 
 ---
 
@@ -242,7 +242,7 @@ Code + metadata = knowledge
 
 ---
 
-## 🟡 8. RAG Engine (Similarity Search)
+## 8. RAG Engine (Similarity Search)
 
 ```python
 rag_engine.py
@@ -269,7 +269,7 @@ Input contract → embedding → compare with DB → retrieve closest matches
 
 ---
 
-## 🔵 9. LLM Explanation Engine
+## 9. LLM Explanation Engine
 
 ```python
 llm_engine.py
@@ -307,11 +307,11 @@ LLM Explanation
 
 ---
 
-# 🧠 Core Design Philosophy
+# Core Design Philosophy
 
 ---
 
-## 🔹 1. Hybrid Intelligence
+## 1. Hybrid Intelligence
 
 ```
 Slither → factual correctness
@@ -321,7 +321,7 @@ LLM → human explanation
 
 ---
 
-## 🔹 2. Grounded AI
+## 2. Grounded AI
 
 LLM is NOT allowed to guess.
 
@@ -333,7 +333,7 @@ AI is grounded on:
 
 ---
 
-## 🔹 3. Modular Architecture
+## 3. Modular Architecture
 
 Each component is independent:
 
@@ -365,7 +365,7 @@ Fix: Use Checks-Effects-Interactions pattern
 
 ---
 
-# ⚠️ Current Limitations
+# Current Limitations
 
 - LLM runs locally → slow on CPU
 - Dataset is small → limited intelligence
@@ -374,39 +374,19 @@ Fix: Use Checks-Effects-Interactions pattern
 
 ---
 
-# 🚀 Future Improvements
-
-### 🔹 Performance
-
-- Use smaller models (Mistral)
-- GPU acceleration
-
-### 🔹 AI Improvements
-
-- Code-specific embeddings
-- AST-based chunking
-
-### 🔹 Productization
-
-- FastAPI backend
-- Web dashboard
-- Upload GitHub repo
-
----
-
-# 🎯 Key Learnings
+# Key Learnings
 
 This project demonstrates:
 
-- ✅ Smart contract security fundamentals
-- ✅ Static analysis integration
-- ✅ RAG system design
-- ✅ LLM grounding techniques
-- ✅ End-to-end AI system architecture
+- Smart contract security fundamentals
+- Static analysis integration
+- RAG system design
+- LLM grounding techniques
+- End-to-end AI system architecture
 
 ---
 
-# 🧠 Final Insight
+# Final Insight
 
 This system is NOT:
 
@@ -419,20 +399,3 @@ It is:
 ```
 AI assisting auditors
 ```
-
----
-
-# 🏁 Conclusion
-
-You have built a:
-
-```
-Real AI-powered Smart Contract Security Analyzer
-```
-
-with:
-
-- Deterministic detection
-- Contextual intelligence
-- Human-like explanation
----
