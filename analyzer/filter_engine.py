@@ -19,7 +19,7 @@ def filter_rag_results(rag_results, slither_issues):
             distance=distances[i]
 
             # Distance filter(remove weak matches)
-            if distance > 0.4:
+            if distance > 0.5:
                 continue
 
             # match with slither issues
@@ -40,5 +40,3 @@ def filter_rag_results(rag_results, slither_issues):
         })
 
     return filtered_results
-        
-        
